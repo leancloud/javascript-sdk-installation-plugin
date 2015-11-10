@@ -1,0 +1,9 @@
+{
+  "name": "leancloud-installation",
+  "version": "1.0.0",
+  "description": "LeanCloud installation helper",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "license": "MIT"
+}
