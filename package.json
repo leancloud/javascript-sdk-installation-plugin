@@ -3,7 +3,21 @@
   "version": "1.0.0",
   "description": "LeanCloud installation helper",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "jstz": "^1.0.7"
+  },
   "devDependencies": {},
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leancloud/javascript-sdk-installation-plugin.git"
+  },
+  "keywords": [
+    "leancloud",
+    "push"
+  ],
+  "bugs": {
+    "url": "https://github.com/leancloud/javascript-sdk-installation-plugin/issues"
+  },
+  "homepage": "https://github.com/leancloud/javascript-sdk-installation-plugin#readme"
 }

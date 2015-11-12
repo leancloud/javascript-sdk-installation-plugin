@@ -1,5 +1,7 @@
 'use strict';
 
+var jstz = require('jstz');
+
 module.exports = function(AV) {
 
   if (!AV) {
@@ -71,6 +73,10 @@ module.exports = function(AV) {
             // create a new Installation
             // installation.dirty() will be true
             installation = new Installation(DEFAULT_INSTALLATION);
+          }
+          var timeZone = jstz.determine().name();
+          if (installation.get('timeZone') !== timeZone) {
+            installation.set('timeZone', timeZone);
           }
           return installation;
         });
