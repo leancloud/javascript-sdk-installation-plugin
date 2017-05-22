@@ -29,7 +29,12 @@ module.exports = function(AV) {
       var newOptions = {};
       // change default endpoint from `/classes/_Installation` to `/installations`
       newOptions._makeRequest = function(route, className, id, method, json) {
-        return AV._request('installations', null, id, method, json);
+        return AV.request({
+          service: 'push',
+          path: '/installations/' + (id || ''),
+          method: method,
+          data: json
+        });
       };
 
       var promise;
@@ -49,9 +54,9 @@ module.exports = function(AV) {
             return model;
           });
       } else {
-        promise = AV.Promise.as(this);
+        promise = AV.Promise.resolve(this);
       }
-      return promise._thenRunCallbacks(options, this);
+      return promise;
     }
   });
 

@@ -3,7 +3,7 @@ LeanCloud Installation
 Installation manage plugin for LeanCloud JavaScript SDK.
 
 ### 安装与使用
-`leancloud-installation` 依赖 LeanCloud JavaScript SDK 1.0.0 及以上版本。
+`leancloud-installation` 依赖 LeanCloud JavaScript SDK v3.0.0。
 
 ```
 npm install leancloud-installation --save
@@ -12,7 +12,7 @@ npm install leancloud-installation --save
 然后在 js 入口进行初始化：
 
 ```javascript
-var AV = require('avoscloud-sdk');
+var AV = require('leancloud-storage');
 AV.initialize('appId', 'appKey');
 var LeancloudInstallation = require('leancloud-installation')(AV);
 ```
@@ -36,4 +36,4 @@ LeancloudInstallation.getCurrent()
 获取当前设备对应的 installation 对象，installation 是 Installation 类的实例。如果是第一次调用，会生成一个新的 installation，否则会从本地缓存中获取。
 
 #### &lt;private&gt; Class Installation
-`Installation` 继承自 `AV.Object`，其实例方法参见 [`AV.Object` 文档](https://leancloud.cn/docs/api/javascript/symbols/AV.Object.html)。每一个 installation 实例对应控制台 _Installation 表中的一条数据。Installation 类的主要属性参见 [消息推送开发指南](https://leancloud.cn/docs/push_guide.html#Installation)。
+`Installation` 继承自 `AV.Object`，其实例方法参见 [`AV.Object` 文档](https://leancloud.github.io/javascript-sdk/docs/AV.Object.html)。每一个 installation 实例对应控制台 _Installation 表中的一条数据。Installation 类的主要属性参见 [消息推送开发指南](https://leancloud.cn/docs/push_guide.html#Installation)。
