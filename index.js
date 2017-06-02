@@ -31,7 +31,7 @@ module.exports = function(AV) {
       newOptions._makeRequest = function(route, className, id, method, json) {
         return AV.request({
           service: 'push',
-          path: '/installations/' + (id || ''),
+          path: '/installations' + ( id ? '/' + id : '' ),
           method: method,
           data: json
         });
