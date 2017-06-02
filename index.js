@@ -49,7 +49,7 @@ module.exports = function(AV) {
             // update local cache.
             AV.localStorage.setItemAsync(
               INSTALLATION_KEY,
-              JSON.stringify(model.toJSON())
+              JSON.stringify(model.toFullJSON())
             );
             return model;
           });
@@ -70,8 +70,7 @@ module.exports = function(AV) {
               var installationData = JSON.parse(installationString);
               // if local cache exists, installation.objectId exists
               // installation.dirty() will be false
-              installation = new Installation();
-              installation._finishFetch(installationData, true);
+              installation = AV.parseJSON(installationData);
             } catch (e) {}
           }
           if (!installation) {

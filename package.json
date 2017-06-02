@@ -1,6 +1,6 @@
 {
   "name": "leancloud-installation",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "LeanCloud installation helper",
   "main": "index.js",
   "dependencies": {
