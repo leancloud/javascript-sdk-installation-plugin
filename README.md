@@ -22,6 +22,7 @@ var LeancloudInstallation = require('leancloud-installation')(AV);
 LeancloudInstallation.getCurrent()
   .then(installation => {
     installation.set('deviceType', 'ios');
+    installation.set('apnsTopic', 'com.example');
     installation.set('deviceToken', 'xxxxxxxx');
     return installation.save();
   });
